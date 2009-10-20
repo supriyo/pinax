@@ -283,11 +283,11 @@ And then we add in the following code underneath the urlpatterns definition::
     from groups.bridge import ContentBridge
     
     # Fetch the group-aware model
-    from tasks.models import Task
+    from projects.models import Project
     
     
     # Create the bridge object
-    bridge = ContentBridge(Task, 'tasks')
+    bridge = ContentBridge(Project, 'projects')
     
     # Add in the bridged url
     urlpatterns += bridge.include_urls('task.urls', r'^projects/(?P<group_slug>[-\w]+)/tasks')
